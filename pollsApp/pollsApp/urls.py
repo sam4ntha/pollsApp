@@ -15,8 +15,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.http import HttpResponse
 from django.urls import path
+
+# def hello(request, num):
+#     html = ''
+#     for i in range(10):
+#         html += f"<p>{ i + 1 } * { num } = { (i + 1) * num }</p>"
+#     return HttpResponse("<h1>Hello:><h1>" + html)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #path('hello/<int:num>', hello, name='hello')
 ]
