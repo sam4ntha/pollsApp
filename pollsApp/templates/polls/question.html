@@ -3,10 +3,11 @@
 {% block title %}Vota{% endblock %}
 
 {% block content %}
+<div class="container">
 <h1> {{ question }} </h1>
 {% if error_message %}
 <div class="alert">
-    <p>{{ error_message }}</p>
+    <p class="text-danger">{{ error_message }}</p>
 </div>
 {% endif %}
 <form method="post">
@@ -16,6 +17,7 @@
     <label for="choice_{{ c.id }}">{{ c.choice_text }}</label>
     <br>
     {% endfor %}
-    <input type="submit" value="Votar">
+    <input type="submit" value="Votar" class="btn btn-outline-success">
 </form>
 {% endblock %}
+</div>
