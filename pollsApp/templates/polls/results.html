@@ -4,21 +4,19 @@
 
 {% block content %}
 <div class="container">
-<h1>{{ question }}</h1>
-<ul>
-    {% for c in question.choice_set.all %}
-    <li>{{ c.choice_text }} --> {{ c.votes }}</li>
-    {% endfor %}
-</ul>
-<div class="col-lg-12">
-    <div class="row">
-        <div class="col-lg-12">
-            <img src="{% url 'polls:results_chart' question.id %}" alt="Gráfico de votos">
-            <a class="text-info" href="{% url 'polls:home' %}">Inicio</a>
+    <h1>{{ question }}</h1>
+    <ul>
+        {% for c in question.choice_set.all %}
+        <li>{{ c.choice_text }} --> {{ c.votes }}</li>
+        {% endfor %}
+    </ul>
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-12">
+                <img src="{% url 'polls:results_chart' question.id %}" alt="Gráfico de votos">
+                <a class="text-info" href="{% url 'polls:home' %}">Inicio</a>
+            </div>
         </div>
     </div>
-
 </div>
-
 {% endblock %}
-</div>
